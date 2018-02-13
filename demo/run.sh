@@ -23,9 +23,6 @@
 #magnetization.bin - Reconstruction of magnetization. Ordering is (z-axis,y-axis,x-axis,3).
 #magvecpot.bin - Reconstruction of magnetic vector potential. Ordering is (z-axis,y-axis,x-axis,3).
  
-#cd $PBS_O_WORKDIR
 export OMP_NUM_THREADS=8 #Set appropriately depending on the system. This enviornment variable may or may not be applicable depending on the system.
 
-
-#../src/XT_Main --proj_rows 256 --proj_cols 256 --proj_x_num 101 --proj_y_num 101 --vox_wid 6 --qggmrf_sigma 0.000005 --qggmrf_c 0.000001 --convg_thresh 0.001 --admm_mu 5000000000 --admm_maxiters 20 --x_widnum 512 --y_widnum 512 --z_widnum 64 --data_variance 0.000146 
 ../src/XT_Main --proj_rows 128 --proj_cols 128 --proj_x_num 71 --proj_y_num 71 --vox_wid 5 --regparam_beta 10000000 --convg_thresh 1.0 --admm_mu 100000 --admm_maxiters 10 --x_widnum 128 --y_widnum 128 --z_widnum 64
