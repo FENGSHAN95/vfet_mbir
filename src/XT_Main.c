@@ -205,7 +205,7 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
 		case  0 : fprintf(debug_msg_ptr, "ERROR: read_command_line_args: Argument not recognized\n");		break;
 		case 'a': *proj_rows = (int32_t)atoi(optarg);			break;
 		case 'b': *proj_cols = (int32_t)atoi(optarg);			break;
-		case 'c': *proj_x_num = (int32_t)atoi(optarg);			break;
+		case 'c': *proj_u_num = (int32_t)atoi(optarg);			break;
 		case 'd': *vox_wid = (float)atof(optarg);			break;
 		case 'e': regparam_beta = (float)atof(optarg);			break;
 		/*case 'e': *qggmrf_sigma = (float)atof(optarg);			break;
@@ -214,10 +214,10 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
 		case 'h': *admm_mu = (float)atof(optarg);			break;
 		case 'i': *admm_maxiters = (int32_t)atoi(optarg);			break;
 		case 'j': *restart = 1;		break;
-		case 'k': *x_widnum = (int32_t)atoi(optarg);			break;
-		case 'l': *y_widnum = (int32_t)atoi(optarg);			break;
-		case 'm': *z_widnum = (int32_t)atoi(optarg);			break;
-		case 'n': *proj_y_num = (int32_t)atoi(optarg);			break;
+		case 'k': *u_widnum = (int32_t)atoi(optarg);			break;
+		case 'l': *v_widnum = (int32_t)atoi(optarg);			break;
+		case 'm': *w_widnum = (int32_t)atoi(optarg);			break;
+		case 'n': *proj_v_num = (int32_t)atoi(optarg);			break;
 		/*case 'o': *data_var = (float)atof(optarg);			break;*/
 		case '?': fprintf(debug_msg_ptr, "ERROR: read_command_line_args: Cannot recognize argument %s\n",optarg); break;
 		}
