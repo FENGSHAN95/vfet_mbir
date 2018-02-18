@@ -171,7 +171,7 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
         {
                {"proj_rows",  required_argument, 0, 'a'}, /*Number of columns in the projection image. Typically, it is the number of detector bins in the cross-axial direction.*/
                {"proj_cols",  required_argument, 0, 'b'}, /*Number of rows (or slices) in the projection image. Typically, it is the number of detector bins in the axial direction.*/
-               {"proj_x_num",  required_argument, 0, 'c'}, /*Total number of 2D projections used for reconstruction.*/
+               {"proj_u_num",  required_argument, 0, 'c'}, /*Total number of 2D projections used for reconstruction.*/
                {"vox_wid",  required_argument, 0, 'd'}, /*Side length of a cubic voxel in inverse units of linear attenuation coefficient of the object. 
 		For example, if units of "vox_wid" is mm, then attenuation coefficient will have units of mm^-1, and vice versa.
 		Note that attenuation coefficient is what we are trying to reconstruct.*/
@@ -186,10 +186,10 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
                {"admm_mu",    required_argument, 0, 'h'}, /*ADMM parameter used to control convergence*/
                {"admm_maxiters",    required_argument, 0, 'i'}, /*Maximum number of admm iterations*/
                {"restart",    no_argument, 0, 'j'}, /*If the reconstruction gets killed due to any unfortunate reason (like exceeding walltime in a super-computing cluster), use this flag to restart the reconstruction from the beginning of the current multi-resolution stage. Don't use restart if WRITE_EVERY_ITER  is 1.*/
-               {"x_widnum",    required_argument, 0, 'k'}, /*number of pixels to reconstruct in x-axis direction*/
-               {"y_widnum",    required_argument, 0, 'l'}, /*number of pixels to reconstruct in y-axis direction*/
-               {"z_widnum",    required_argument, 0, 'm'}, /*number of pixels to reconstruct in z-axis direction*/
-               {"proj_y_num",  required_argument, 0, 'n'}, /*Total number of 2D projections used for reconstruction.*/
+               {"u_widnum",    required_argument, 0, 'k'}, /*number of pixels to reconstruct in x-axis direction*/
+               {"v_widnum",    required_argument, 0, 'l'}, /*number of pixels to reconstruct in y-axis direction*/
+               {"w_widnum",    required_argument, 0, 'm'}, /*number of pixels to reconstruct in z-axis direction*/
+               {"proj_v_num",  required_argument, 0, 'n'}, /*Total number of 2D projections used for reconstruction.*/
                /*{"data_variance",  required_argument, 0, 'o'}, *//*Total number of 2D projections used for reconstruction.*/
 		{0, 0, 0, 0}
          };
@@ -205,7 +205,7 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
 		case  0 : fprintf(debug_msg_ptr, "ERROR: read_command_line_args: Argument not recognized\n");		break;
 		case 'a': *proj_rows = (int32_t)atoi(optarg);			break;
 		case 'b': *proj_cols = (int32_t)atoi(optarg);			break;
-		case 'c': *proj_u_num = (int32_t)atoi(optarg);			break;
+		case 'c': *proj_x_num = (int32_t)atoi(optarg);			break;
 		case 'd': *vox_wid = (float)atof(optarg);			break;
 		case 'e': regparam_beta = (float)atof(optarg);			break;
 		/*case 'e': *qggmrf_sigma = (float)atof(optarg);			break;
@@ -214,10 +214,10 @@ void read_command_line_args (int32_t argc, char **argv, int32_t *proj_rows, int3
 		case 'h': *admm_mu = (float)atof(optarg);			break;
 		case 'i': *admm_maxiters = (int32_t)atoi(optarg);			break;
 		case 'j': *restart = 1;		break;
-		case 'k': *u_widnum = (int32_t)atoi(optarg);			break;
-		case 'l': *v_widnum = (int32_t)atoi(optarg);			break;
-		case 'm': *w_widnum = (int32_t)atoi(optarg);			break;
-		case 'n': *proj_v_num = (int32_t)atoi(optarg);			break;
+		case 'k': *x_widnum = (int32_t)atoi(optarg);			break;
+		case 'l': *y_widnum = (int32_t)atoi(optarg);			break;
+		case 'm': *z_widnum = (int32_t)atoi(optarg);			break;
+		case 'n': *proj_y_num = (int32_t)atoi(optarg);			break;
 		/*case 'o': *data_var = (float)atof(optarg);			break;*/
 		case '?': fprintf(debug_msg_ptr, "ERROR: read_command_line_args: Cannot recognize argument %s\n",optarg); break;
 		}
