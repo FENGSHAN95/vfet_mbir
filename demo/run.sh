@@ -1,7 +1,7 @@
 
  export OMP_NUM_THREADS=8 #Set appropriately depending on the system. This enviornment variable may or may not be applicable depending on the system.
 
-../src/XT_Main --proj_rows 128 --proj_cols 128 --proj_x_num 71 --proj_y_num 71 --vox_wid 5 --regparam_beta 10000000 --convg_thresh 1.0 --admm_mu 100000 --admm_maxiters 10 --x_widnum 128 --y_widnum 128 --z_widnum 64
+../src/XT_Main --proj_rows 128 --proj_cols 128 --proj_u_num 71 --proj_v_num 71 --vox_wid 5 --regparam_beta 10000000 --convg_thresh 1.0 --admm_mu 100000 --admm_maxiters 10 --u_widnum 128 --v_widnum 128 --w_widnum 64
 
 #proj_rows - Number of rows (or slices) in the projection image. Typically, it is the number of detector bins in the axial direction.
 #proj_cols - Number of columns in the projection image. Typically, it is the number of detector bins in the cross-axial direction.
