@@ -1,8 +1,7 @@
 References
 K. A. Mohan, P. KC, C. Phatak, M. De Graef and C. A. Bouman, 
 "Model-Based Iterative Reconstruction of Magnetization Using Vector Field Electron Tomography," 
-in IEEE Transactions on Computational Imaging, 
-vol. 4, no. 3, pp. 432-446, Sept. 2018, doi: 10.1109/TCI.2018.2838454.
+in IEEE Transactions on Computational Imaging, vol. 4, no. 3, pp. 432-446, Sept. 2018, doi: 10.1109/TCI.2018.2838454.
 
 Software Dependencies
 1. C compiler such as gcc or icc
